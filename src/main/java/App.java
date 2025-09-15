@@ -8,5 +8,11 @@ public class App {
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
         System.out.println(bean.getMessage());
+
+        ApplicationContext applicationContext2 =
+                new AnnotationConfigApplicationContext(AppConfig.class);
+        Cat bean2 =
+                (Cat) applicationContext2.getBean("cat");
+        System.out.println(bean2.getMessage());
     }
 }
